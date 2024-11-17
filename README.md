@@ -1,30 +1,69 @@
 # RoadGuard: Real-Time Accident and Speed Detection System
 
-This project is a computer vision-based solution that uses YOLO for detecting accidents in real-time video streams. It highlights detected accidents on the video frames and notifies users via email with an attached image of the detected event.
+This project is a real-time accident and speed detection system using computer vision and deep learning. The system detects accidents in video footage and sends an email alert with an attached image of the detected accident.
 
----
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/RoadGuard.git
+    cd RoadGuard
+    ```
+
+2. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+1. Place your video file in the project directory and update the `cap = cv2.VideoCapture(r"your_video.mp4")` line in the code with your video file path.
+
+2. Update the `sender_email`, `receiver_email`, and `password` variables with your email credentials.
+
+3. Run the script:
+    ```bash
+    python main.py
+    ```
 
 ## Features
 
-- **Accident Detection:** Identifies accidents in real-time using YOLOv8.
-- **Visual Feedback:** Highlights detected objects and accidents with bounding boxes in the video feed.
-- **Email Notifications:** Sends an alert email with an attached image of the accident scene when an accident is detected.
-- **Cool-down Mechanism:** Prevents duplicate emails by implementing a cooldown frame-based mechanism.
+- Real-time accident detection using YOLO model.
+- Sends email alerts with an attached image of the detected accident.
+- Configurable cooldown period to prevent multiple email alerts for the same accident.
 
----
+## Configuration
 
-## Prerequisites
+- **Model**: The YOLO model is used for object detection. Update the model path if necessary.
+    ```python
+    model = YOLO(r"best (1).pt")
+    ```
 
-Ensure you have the following installed:
+- **Classes**: The classes for detection are read from a text file.
+    ```python
+    df = open(r"coco1.txt", "r")
+    classes = df.read().split("\n")
+    ```
 
-- Python 3.7 or higher
-- OpenCV
-- cvzone
-- numpy
-- ultralytics (for YOLO)
-- smtplib (standard library)
-- ssl (standard library)
+- **Email Configuration**: Update the email credentials and settings.
+    ```python
+    sender_email = "your_email@gmail.com"
+    receiver_email = "receiver_email@gmail.com"
+    password = "your_email_password"
+    ```
 
-Install the required Python libraries with:
-```bash
-pip install opencv-python cvzone numpy ultralytics
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
