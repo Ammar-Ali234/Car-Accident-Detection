@@ -9,10 +9,11 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import ssl
-
-path = r"d:\\download\\Car-Accident\\RoadGuard-Real-Time-Accident-and-Speed-Detection-System-main"
-os.chdir(path)
 from tracker import Tracker  # Your tracker module
+
+path = r"Path of the directory where all the files are present"
+os.chdir(path)
+
 
 # Model
 model = YOLO(r"best (1).pt")
@@ -30,9 +31,9 @@ prev_times = {}
 fps = cap.get(cv2.CAP_PROP_FPS)  # Frames per second of the video
 
 # SMTP configuration for sending emails
-sender_email = "mammarali299@gmail.com"
-receiver_email = "mammarali299@gmail.com"
-password = "skip skki wzwl aiiv"  # For app password if 2-factor authentication is enabled
+sender_email = "sender gmail"
+receiver_email = "receiver gmail"
+password = ""  # For app password if 2-factor authentication is enabled
 
 # Flag to track if an accident email has been sent
 accident_email_sent = False
