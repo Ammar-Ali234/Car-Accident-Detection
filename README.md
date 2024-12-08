@@ -2,6 +2,8 @@
 
 This project is a real-time accident and speed detection system using computer vision and deep learning. The system detects accidents in video footage and sends an email alert with an attached image of the detected accident.
 
+[Youtube Video Link](https://youtu.be/-W5IYvsa4zY?si=IHRwGY7Qor7dUK3I)
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -14,13 +16,13 @@ This project is a real-time accident and speed detection system using computer v
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/RoadGuard.git
-    cd RoadGuard
+    git clone https://github.com/Ammar-Ali234/Car-Accident-Detection.git
+    cd Car_Accident
     ```
 
-2. Install the required packages:
+2. Install the required packages (paste the following into your terminal):
     ```bash
-    pip install -r requirements.txt
+    pip install ultralytics google-smtp
     ```
 
 ## Usage
@@ -31,7 +33,7 @@ This project is a real-time accident and speed detection system using computer v
 
 3. Run the script:
     ```bash
-    python main.py
+    python final.py
     ```
 
 ## Features
@@ -63,6 +65,8 @@ This project is a real-time accident and speed detection system using computer v
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## If You need any help do contact me on linkedin (link is in my about section)
 
 ## License
 
